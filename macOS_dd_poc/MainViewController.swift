@@ -145,9 +145,8 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, NSCont
 
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
 
-
         if index < self.currentDraggie.draggie().count {
-            return self.currentDraggie.draggie()[index]
+            return ElementDataSource(values: [self.currentDraggie.draggie()[index]])
         }
         // should never be called
         return "end nil"
@@ -159,8 +158,8 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, NSCont
             case NameTableColumn:
 
                 var name = ""
-                if let element = (item as? Int) {
-                    name = "\(element)"
+                if let element = (item as? ElementDataSource), let item = element.allValues().first {
+                    name = "\(item)"
                 }
 
                 return name

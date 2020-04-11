@@ -45,7 +45,7 @@ final class ElementDataSource: NSObject, ElementDataSourceInterface {
     }
 
     func name() -> String {
-        return self.suggestedFilename()
+        return "items \(self.values.first ?? 0)"
     }
 
     static var supportsSecureCoding: Bool {

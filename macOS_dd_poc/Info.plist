@@ -75,7 +75,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.xml</string>
+				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>draggie</string>

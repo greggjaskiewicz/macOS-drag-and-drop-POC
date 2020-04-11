@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2702815322C1A83F00BA0757 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2702815222C1A83F00BA0757 /* Credits.rtf */; };
-		27126C8122E8C9CD00AB1BB4 /* DraggieWizardOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27126C8022E8C9CC00AB1BB4 /* DraggieWizardOutlineView.swift */; };
-		27126C8322E8CA0B00AB1BB4 /* FileContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27126C8222E8CA0B00AB1BB4 /* FileContextMenu.swift */; };
 		27260A5C1F7BE35500016EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A5B1F7BE35500016EA8 /* AppDelegate.swift */; };
 		27260A5E1F7BE35500016EA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A5D1F7BE35500016EA8 /* MainViewController.swift */; };
 		27260A601F7BE35500016EA8 /* DraggieDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A5F1F7BE35500016EA8 /* DraggieDocument.swift */; };
@@ -51,8 +49,6 @@
 		2701E0FE21CAA48C00B57F1E /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		2701E10021CAA49200B57F1E /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
 		2702815222C1A83F00BA0757 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		27126C8022E8C9CC00AB1BB4 /* DraggieWizardOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggieWizardOutlineView.swift; sourceTree = "<group>"; };
-		27126C8222E8CA0B00AB1BB4 /* FileContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContextMenu.swift; sourceTree = "<group>"; };
 		27260A581F7BE35500016EA8 /* Draggie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draggie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27260A5B1F7BE35500016EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27260A5D1F7BE35500016EA8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				2778CA6A22DFCDE100E2F173 /* DraggieDocumentModel */,
-				27DA272422C6936C0033117E /* Main Window */,
 				27F8F8E21F7C228100A1038A /* Data Sources */,
 				27260A6D1F7BE63B00016EA8 /* file ops */,
 				27260A5B1F7BE35500016EA8 /* AppDelegate.swift */,
@@ -138,15 +133,6 @@
 				2778CA6B22DFCDF600E2F173 /* DraggieDocumentModel.swift */,
 			);
 			path = DraggieDocumentModel;
-			sourceTree = "<group>";
-		};
-		27DA272422C6936C0033117E /* Main Window */ = {
-			isa = PBXGroup;
-			children = (
-				27126C8022E8C9CC00AB1BB4 /* DraggieWizardOutlineView.swift */,
-				27126C8222E8CA0B00AB1BB4 /* FileContextMenu.swift */,
-			);
-			path = "Main Window";
 			sourceTree = "<group>";
 		};
 		27F8F8DF1F7C0F0F00A1038A /* Frameworks */ = {
@@ -268,10 +254,8 @@
 			files = (
 				27556FEF22D23895009A05B7 /* AssembleDraggieFile.swift in Sources */,
 				27260A5E1F7BE35500016EA8 /* MainViewController.swift in Sources */,
-				27126C8322E8CA0B00AB1BB4 /* FileContextMenu.swift in Sources */,
 				27F8F8E81F7C22AE00A1038A /* Colours.swift in Sources */,
 				2778CA6C22DFCDF600E2F173 /* DraggieDocumentModel.swift in Sources */,
-				27126C8122E8C9CD00AB1BB4 /* DraggieWizardOutlineView.swift in Sources */,
 				27260A5C1F7BE35500016EA8 /* AppDelegate.swift in Sources */,
 				27260A601F7BE35500016EA8 /* DraggieDocument.swift in Sources */,
 				272ED5CC2304779000088DFB /* ElementDataSourcesExporter.swift in Sources */,

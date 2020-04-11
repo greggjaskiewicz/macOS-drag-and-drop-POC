@@ -115,25 +115,6 @@ final class ViewController: NSViewController {
         }
         self.documentElementTreeOutlineView?.reloadData()
     }
-
-    fileprivate func createOverlayViewController() -> NSViewController? {
-        let overlayStoryboardName = "LoadingOverlayViewController"
-
-        let storyboardName = NSStoryboard.Name(stringLiteral: "Main")
-        let storyboard = NSStoryboard(name: storyboardName, bundle: nil)
-
-        let sceneIdentifier = NSStoryboard.SceneIdentifier(stringLiteral: overlayStoryboardName)
-        guard let viewController = storyboard.instantiateController(withIdentifier: sceneIdentifier) as? NSViewController else {
-            return nil
-        }
-
-        //        let blurFilter = CIFilter(name: "CIGaussianBlur")
-        //        blurFilter?.setDefaults()
-        //        blurFilter?.setValue(2.5, forKey: kCIInputRadiusKey)
-        //        viewController.view.layer?.backgroundFilters?.append(blurFilter!)
-
-        return viewController
-    }
 }
 
 // NSDraggingDestination
@@ -663,7 +644,7 @@ final class MainDocumentWindowController: NSWindowController {
 
 }
 
-extension ViewController: MenuOutlineViewDelegate {
+extension ViewController {
 
     @IBAction func contextMenuDeleteItem(_ x: Any) {
 
@@ -728,31 +709,6 @@ extension ViewController: MenuOutlineViewDelegate {
             })
 
         }
-    }
-
-    func outlineView(outlineView: NSOutlineView, willOpenMenu menu: NSMenu?, forItem item: ElementDataSource) {
-
-        guard let contextMenu = menu as? FileContextMenu else {
-            return
-        }
-
-        contextMenu.deleteItem.isEnabled = true
-        contextMenu.details.isEnabled = true
-        contextMenu.export.isEnabled = true
-
-        print("for item \(item)")
-    }
-
-    func outlineView(outlineView: NSOutlineView, willOpenMenu menu: NSMenu?, forItems items: [ElementDataSource]) {
-
-        guard let contextMenu = menu as? FileContextMenu else {
-            return
-        }
-        contextMenu.deleteItem.isEnabled = true
-        contextMenu.details.isEnabled = false
-        contextMenu.export.isEnabled = true
-
-        print("for items \(items)")
     }
 
     @IBAction func addItemAction(_ sender: Any) {

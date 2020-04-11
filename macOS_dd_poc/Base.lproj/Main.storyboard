@@ -483,7 +483,7 @@
                                             <rect key="frame" x="1" y="0.0" width="798" height="599"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" autosaveColumns="NO" headerView="9ar-AB-xke" indentationPerLevel="16" outlineTableColumn="OI1-1Y-Jqp" id="bGb-9L-bUZ" customClass="DraggieWizardView" customModule="Draggie" customModuleProvider="target">
+                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" autosaveColumns="NO" headerView="9ar-AB-xke" indentationPerLevel="16" outlineTableColumn="OI1-1Y-Jqp" id="bGb-9L-bUZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="798" height="576"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>

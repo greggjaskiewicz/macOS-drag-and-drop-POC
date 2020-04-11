@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2702815322C1A83F00BA0757 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2702815222C1A83F00BA0757 /* Credits.rtf */; };
+		27126C8122E8C9CD00AB1BB4 /* DraggieWizardOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27126C8022E8C9CC00AB1BB4 /* DraggieWizardOutlineView.swift */; };
+		27126C8322E8CA0B00AB1BB4 /* FileContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27126C8222E8CA0B00AB1BB4 /* FileContextMenu.swift */; };
+		27260A5C1F7BE35500016EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A5B1F7BE35500016EA8 /* AppDelegate.swift */; };
+		27260A5E1F7BE35500016EA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A5D1F7BE35500016EA8 /* MainViewController.swift */; };
+		27260A601F7BE35500016EA8 /* DraggieDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A5F1F7BE35500016EA8 /* DraggieDocument.swift */; };
+		27260A621F7BE35500016EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27260A611F7BE35500016EA8 /* Assets.xcassets */; };
+		27260A651F7BE35500016EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27260A631F7BE35500016EA8 /* Main.storyboard */; };
+		27260A6F1F7BE65C00016EA8 /* ParseDraggieFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27260A6E1F7BE65C00016EA8 /* ParseDraggieFile.swift */; };
+		272ED5CC2304779000088DFB /* ElementDataSourcesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272ED5CB2304779000088DFB /* ElementDataSourcesExporter.swift */; };
+		27556FEF22D23895009A05B7 /* AssembleDraggieFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27556FEE22D23895009A05B7 /* AssembleDraggieFile.swift */; };
+		2762C54722D784D70012BEF1 /* ElementDataSourceExporterPromiseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762C54622D784D70012BEF1 /* ElementDataSourceExporterPromiseProvider.swift */; };
+		2778CA6C22DFCDF600E2F173 /* DraggieDocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778CA6B22DFCDF600E2F173 /* DraggieDocumentModel.swift */; };
+		27BB408221C3AEA10097EADE /* DataChangedObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB408121C3AEA10097EADE /* DataChangedObserver.swift */; };
+		27F8F8E51F7C228700A1038A /* ElementDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8F8E31F7C228100A1038A /* ElementDataSource.swift */; };
+		27F8F8E81F7C22AE00A1038A /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8F8E71F7C22AE00A1038A /* Colours.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2763759A22DDCD4000E07978 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/QuickLook;
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C8C0B222B8FD7A008F0E41 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2701E0FE21CAA48C00B57F1E /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
+		2701E10021CAA49200B57F1E /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
+		2702815222C1A83F00BA0757 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		27126C8022E8C9CC00AB1BB4 /* DraggieWizardOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggieWizardOutlineView.swift; sourceTree = "<group>"; };
+		27126C8222E8CA0B00AB1BB4 /* FileContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContextMenu.swift; sourceTree = "<group>"; };
+		27260A581F7BE35500016EA8 /* Draggie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draggie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27260A5B1F7BE35500016EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27260A5D1F7BE35500016EA8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		27260A5F1F7BE35500016EA8 /* DraggieDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggieDocument.swift; sourceTree = "<group>"; };
+		27260A611F7BE35500016EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27260A641F7BE35500016EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27260A661F7BE35500016EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27260A6E1F7BE65C00016EA8 /* ParseDraggieFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseDraggieFile.swift; sourceTree = "<group>"; };
+		272ED5CB2304779000088DFB /* ElementDataSourcesExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDataSourcesExporter.swift; sourceTree = "<group>"; };
+		27556FEE22D23895009A05B7 /* AssembleDraggieFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleDraggieFile.swift; sourceTree = "<group>"; };
+		2762C54622D784D70012BEF1 /* ElementDataSourceExporterPromiseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDataSourceExporterPromiseProvider.swift; sourceTree = "<group>"; };
+		2763758922DDCD4000E07978 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		2778CA4322DF09D200E2F173 /* foo_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = foo_icon.icns; sourceTree = "<group>"; };
+		2778CA6B22DFCDF600E2F173 /* DraggieDocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggieDocumentModel.swift; sourceTree = "<group>"; };
+		27BB408121C3AEA10097EADE /* DataChangedObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataChangedObserver.swift; sourceTree = "<group>"; };
+		27C8C0AE22B8F6EB008F0E41 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/Mac/Charts.framework; sourceTree = "<group>"; };
+		27F8F8E01F7C0F0F00A1038A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		27F8F8E31F7C228100A1038A /* ElementDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDataSource.swift; sourceTree = "<group>"; };
+		27F8F8E71F7C22AE00A1038A /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27260A551F7BE35500016EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27260A4F1F7BE35500016EA8 = {
+			isa = PBXGroup;
+			children = (
+				27260A5A1F7BE35500016EA8 /* macOS_dd_poc */,
+				27260A591F7BE35500016EA8 /* Products */,
+				27F8F8DF1F7C0F0F00A1038A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27260A591F7BE35500016EA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27260A581F7BE35500016EA8 /* Draggie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27260A5A1F7BE35500016EA8 /* macOS_dd_poc */ = {
+			isa = PBXGroup;
+			children = (
+				2778CA6A22DFCDE100E2F173 /* DraggieDocumentModel */,
+				27DA272422C6936C0033117E /* Main Window */,
+				27F8F8E21F7C228100A1038A /* Data Sources */,
+				27260A6D1F7BE63B00016EA8 /* file ops */,
+				27260A5B1F7BE35500016EA8 /* AppDelegate.swift */,
+				27260A5D1F7BE35500016EA8 /* MainViewController.swift */,
+				27F8F8E71F7C22AE00A1038A /* Colours.swift */,
+				27BB408121C3AEA10097EADE /* DataChangedObserver.swift */,
+				27260A5F1F7BE35500016EA8 /* DraggieDocument.swift */,
+				27260A611F7BE35500016EA8 /* Assets.xcassets */,
+				2778CA4322DF09D200E2F173 /* foo_icon.icns */,
+				27260A631F7BE35500016EA8 /* Main.storyboard */,
+				27260A661F7BE35500016EA8 /* Info.plist */,
+				2702815222C1A83F00BA0757 /* Credits.rtf */,
+			);
+			path = macOS_dd_poc;
+			sourceTree = "<group>";
+		};
+		27260A6D1F7BE63B00016EA8 /* file ops */ = {
+			isa = PBXGroup;
+			children = (
+				27260A6E1F7BE65C00016EA8 /* ParseDraggieFile.swift */,
+				27556FEE22D23895009A05B7 /* AssembleDraggieFile.swift */,
+			);
+			path = "file ops";
+			sourceTree = "<group>";
+		};
+		2778CA6A22DFCDE100E2F173 /* DraggieDocumentModel */ = {
+			isa = PBXGroup;
+			children = (
+				2778CA6B22DFCDF600E2F173 /* DraggieDocumentModel.swift */,
+			);
+			path = DraggieDocumentModel;
+			sourceTree = "<group>";
+		};
+		27DA272422C6936C0033117E /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				27126C8022E8C9CC00AB1BB4 /* DraggieWizardOutlineView.swift */,
+				27126C8222E8CA0B00AB1BB4 /* FileContextMenu.swift */,
+			);
+			path = "Main Window";
+			sourceTree = "<group>";
+		};
+		27F8F8DF1F7C0F0F00A1038A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27C8C0AE22B8F6EB008F0E41 /* Charts.framework */,
+				2701E10021CAA49200B57F1E /* libcommonCrypto.tbd */,
+				2701E0FE21CAA48C00B57F1E /* libcompression.tbd */,
+				27F8F8E01F7C0F0F00A1038A /* MapKit.framework */,
+				2763758922DDCD4000E07978 /* Quartz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27F8F8E21F7C228100A1038A /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				27F8F8E31F7C228100A1038A /* ElementDataSource.swift */,
+				2762C54622D784D70012BEF1 /* ElementDataSourceExporterPromiseProvider.swift */,
+				272ED5CB2304779000088DFB /* ElementDataSourcesExporter.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27260A571F7BE35500016EA8 /* Draggie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27260A6A1F7BE35500016EA8 /* Build configuration list for PBXNativeTarget "Draggie" */;
+			buildPhases = (
+				27260A541F7BE35500016EA8 /* Sources */,
+				27260A551F7BE35500016EA8 /* Frameworks */,
+				27260A561F7BE35500016EA8 /* Resources */,
+				27C8C0B222B8FD7A008F0E41 /* CopyFiles */,
+				2763759A22DDCD4000E07978 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Draggie;
+			productName = Draggie;
+			productReference = 27260A581F7BE35500016EA8 /* Draggie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27260A501F7BE35500016EA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = k4lab;
+				TargetAttributes = {
+					27260A571F7BE35500016EA8 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Maps.Mac = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 27260A531F7BE35500016EA8 /* Build configuration list for PBXProject "macOS_dd_poc" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27260A4F1F7BE35500016EA8;
+			productRefGroup = 27260A591F7BE35500016EA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27260A571F7BE35500016EA8 /* Draggie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27260A561F7BE35500016EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27260A621F7BE35500016EA8 /* Assets.xcassets in Resources */,
+				27260A651F7BE35500016EA8 /* Main.storyboard in Resources */,
+				2702815322C1A83F00BA0757 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27260A541F7BE35500016EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27556FEF22D23895009A05B7 /* AssembleDraggieFile.swift in Sources */,
+				27260A5E1F7BE35500016EA8 /* MainViewController.swift in Sources */,
+				27126C8322E8CA0B00AB1BB4 /* FileContextMenu.swift in Sources */,
+				27F8F8E81F7C22AE00A1038A /* Colours.swift in Sources */,
+				2778CA6C22DFCDF600E2F173 /* DraggieDocumentModel.swift in Sources */,
+				27126C8122E8C9CD00AB1BB4 /* DraggieWizardOutlineView.swift in Sources */,
+				27260A5C1F7BE35500016EA8 /* AppDelegate.swift in Sources */,
+				27260A601F7BE35500016EA8 /* DraggieDocument.swift in Sources */,
+				272ED5CC2304779000088DFB /* ElementDataSourcesExporter.swift in Sources */,
+				27BB408221C3AEA10097EADE /* DataChangedObserver.swift in Sources */,
+				2762C54722D784D70012BEF1 /* ElementDataSourceExporterPromiseProvider.swift in Sources */,
+				27260A6F1F7BE65C00016EA8 /* ParseDraggieFile.swift in Sources */,
+				27F8F8E51F7C228700A1038A /* ElementDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27260A631F7BE35500016EA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27260A641F7BE35500016EA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27260A681F7BE35500016EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27260A691F7BE35500016EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		27260A6B1F7BE35500016EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU7PPU4ZM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = macOS_dd_poc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k4lab.Draggie;
+				PRODUCT_NAME = Draggie;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		27260A6C1F7BE35500016EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU7PPU4ZM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = macOS_dd_poc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k4lab.Draggie;
+				PRODUCT_NAME = Draggie;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27260A531F7BE35500016EA8 /* Build configuration list for PBXProject "macOS_dd_poc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27260A681F7BE35500016EA8 /* Debug */,
+				27260A691F7BE35500016EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27260A6A1F7BE35500016EA8 /* Build configuration list for PBXNativeTarget "Draggie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27260A6B1F7BE35500016EA8 /* Debug */,
+				27260A6C1F7BE35500016EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27260A501F7BE35500016EA8 /* Project object */;
+}

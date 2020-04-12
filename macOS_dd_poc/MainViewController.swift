@@ -192,49 +192,7 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, NSCont
 }
 
 extension ViewController: NSDraggingDestination  {
-/*
-    func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
 
-        //        let pasteBoard = sender.draggingPasteboard
-        //        let filteringOptions = [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes:NSImage.imageTypes]
-
-        //        let canAccept = pasteBoard.canReadObject(forClasses: AcceptedDraggableTypes, options: [:])
-
-        let supportedClasses = [
-            NSFilePromiseReceiver.self,
-            NSURL.self
-        ]
-
-        let searchOptions: [NSPasteboard.ReadingOptionKey: Any] = [
-            .urlReadingFileURLsOnly: true
-            //            ,
-            //            .urlReadingContentsConformToTypes: [ kUTTypeImage ]
-        ]
-
-
-        sender.enumerateDraggingItems(options: [], for: nil, classes: supportedClasses, searchOptions: searchOptions) { (draggingItem, _, _) in
-            switch draggingItem.item {
-            case let filePromiseReceiver as NSFilePromiseReceiver:
-                filePromiseReceiver.receivePromisedFiles(atDestination: self.destinationURL, options: [:],
-                                                         operationQueue: self.workQueue) { (fileURL, error) in
-                                                            if let error = error {
-                                                                print("error: \(error)")
-                                                                //                                                                self.handleError(error)
-                                                            } else {
-                                                                print("promised fileURL: \(fileURL)")
-                                                                //                                                                self.handleFile(at: fileURL)
-                                                            }
-                }
-            case let fileURL as URL:
-                print("fileURL: \(fileURL)")
-            //                self.handleFile(at: fileURL)
-            default: break
-            }
-        }
-
-        return .copy
-    }
-*/
     func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
         return true
     }
@@ -313,69 +271,10 @@ extension ViewController: NSDraggingDestination  {
 
             return true
 
-//
-//            var fileType: NSPasteboard.PasteboardType?
-//            print("pasteboard types: \(types)")
-//
-//            print("# internal")
-//
-//            var pasteboardFiles: [AnyObject]?
-//
-//            for type in types {
-//                let x = pasteboard.propertyList(forType: type) as? [AnyObject]
-//                if x?.isEmpty == false  {
-//                    fileType = type
-//                    pasteboardFiles = x
-//                    break
-//                }
-//            }
-//
-//            guard let files = pasteboardFiles else {
-//                return false
-//            }
-//
-//            for file in files {
-//                print("file \(file)")
-//                if let f = file as? NSPasteboardWriting, let type = fileType {
-//                    print("file: \(f)")
-//
-//                    let x = f.pasteboardPropertyList(forType: type)
-//                    print("property list \(x)")
-//                }
-//            }
-
-
             // internal
         } else {
             print("# external")
             // external
-/*
-            let fileURLType = NSPasteboard.PasteboardType.fileURL
-
-            let NSFilenamesPboardTypeTemp = NSPasteboard.PasteboardType("NSFilenamesPboardType")
-
-            guard pasteboard.types?.contains(fileURLType) == true else {
-                return false
-            }
-
-            guard let files = pasteboard.propertyList(forType: fileURLType) as? [AnyObject] else {
-                return false
-            }
-
-            let type = files.self
-
-            print("files \(files) , type \(type)")
-*/
-/*
- else if( [pboard.types containsObject:NSFilenamesPboardType] ) {
-
-        NSPasteboard *filenamePasteBoard = [info draggingPasteboard];
-        if ( [pboard.types containsObject:NSFilenamesPboardType] ) {
-
-            NSArray *files = [filenamePasteBoard propertyListForType:NSFilenamesPboardType];
-            BOOL returnCode = YES;
-
- */
 
             // are we interested in any of the objects?
 //            let fileURLType = kUTTypeFileURL as NSPasteboard.PasteboardType
@@ -454,101 +353,6 @@ extension ViewController: NSDraggingDestination  {
             print("# external")
             return accepted
         }
-
-        // don't accept drops for now
-//        return false
-
-/*
-        let supportedClasses = [
-            NSFilePromiseReceiver.self,
-            NSURL.self
-        ]
-
-        let searchOptions: [NSPasteboard.ReadingOptionKey: Any] = [
-            .urlReadingFileURLsOnly: true
-            //            ,
-            //            .urlReadingContentsConformToTypes: [ kUTTypeImage ]
-        ]
-
-        var url: URL?
-
-        info.enumerateDraggingItems(options: [], for: nil, classes: supportedClasses, searchOptions: searchOptions) { (draggingItem, _, _) in
-            switch draggingItem.item {
-            case let filePromiseReceiver as NSFilePromiseReceiver:
-                filePromiseReceiver.receivePromisedFiles(atDestination: self.destinationURL, options: [:],
-                                                         operationQueue: self.workQueue) { (fileURL, error) in
-                                                            if let error = error {
-                                                                print("error: \(error)")
-                                                                //                                                                self.handleError(error)
-                                                            } else {
-                                                                print("fileURL: \(fileURL)")
-                                                                //                                                                self.handleFile(at: fileURL)
-                                                            }
-                }
-            case let fileURL as URL:
-                url = fileURL
-                print("fileURL: \(fileURL)")
-                return
-            default:
-                break
-            }
-        }
-
-        guard let fileURL = url else {
-            return false
-        }
-
-        guard let data = try? Data(contentsOf: fileURL, options: .alwaysMapped) else {
-            return false
-        }
-        print("data length \(data.count)")
-
-        let parser = try? ParseDraggieFile(draggieFileData: data)
-
-        guard parser?.fastVerification() == true else {
-            print("not Draggie dragged in")
-            return false
-        }
-
-        //        print("draggie: \(draggie)")
-
-//        return true
-
-        //        NSPasteboard* pboard = [info draggingPasteboard];
-        let pasteBoard = info.draggingPasteboard
-
-        if let urlString = pasteBoard.string(forType: NSPasteboard.PasteboardType(kUTTypeFileURL as String)) {
-            let url = NSURL(fileURLWithPath: urlString)
-            print("file url \(url)")
-
-            let data = try? Data(contentsOf: url as URL, options: .alwaysMapped)
-            print("data length \(data?.count)")
-
-            return true
-
-            // try loading the draggie file
-
-        }
-
-        return false
-
-
-        let firstItem = pasteBoard.pasteboardItems?.first
-        if let fileUrlData = pasteBoard.data(forType: NSPasteboard.PasteboardType(rawValue: "public.file-url")) {
-            let fileUrlString = String(data: fileUrlData, encoding: .utf8)
-            print("file url \(fileUrlString)")
-        }
-
-        print("\(firstItem)")
-
-        guard let draggedItem = item else {
-            return false
-        }
-
-        print("item type -> \(draggedItem)")
-
-        return false
- */
     }
 
     func outlineView(_ outlineView: NSOutlineView, namesOfPromisedFilesDroppedAtDestination dropDestination: URL, forDraggedItems items: [Any]) -> [String] {
@@ -574,42 +378,7 @@ extension ViewController: NSDraggingDestination  {
         }
 
         return .every
-/*
-        print("validateDrop validateDrop \(info) ")
 
-        let supportedClasses = [
-            NSFilePromiseReceiver.self,
-            NSURL.self
-        ]
-
-        let searchOptions: [NSPasteboard.ReadingOptionKey: Any] = [
-            .urlReadingFileURLsOnly: true
-            //            .urlReadingContentsConformToTypes: [ kUTTypeImage ]
-        ]
-
-
-        info.enumerateDraggingItems(options: [], for: nil, classes: supportedClasses, searchOptions: searchOptions) { (draggingItem, _, _) in
-            switch draggingItem.item {
-            case let filePromiseReceiver as NSFilePromiseReceiver:
-                filePromiseReceiver.receivePromisedFiles(atDestination: self.destinationURL, options: [:],
-                                                         operationQueue: self.workQueue) { (fileURL, error) in
-                                                            if let error = error {
-                                                                print("error: \(error)")
-                                                                //                                                                self.handleError(error)
-                                                            } else {
-                                                                print("fileURL: \(fileURL)")
-                                                                //                                                                self.handleFile(at: fileURL)
-                                                            }
-                }
-            case let fileURL as URL:
-                print("fileURL: \(fileURL)")
-            //                self.handleFile(at: fileURL)
-            default: break
-            }
-        }
-
-        return .every
- */
     }
 
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItems draggedItems: [Any]) {

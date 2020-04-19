@@ -397,6 +397,15 @@ extension ViewController: NSDraggingDestination  {
 
 
         for item in session.draggingPasteboard.pasteboardItems ?? [] {
+
+            if let availableType = item.availableType(from: [.draggieElement]) {
+                print("properties: \(availableType)")
+            }
+
+            if let internalReference = item.string(forType: .internalReference) {
+                print("internalReference: \(internalReference)")
+            }
+
             for type in item.types {
                 if let data = item.data(forType: type) {
                     print("### type: \(type), data length: \(data.count)")

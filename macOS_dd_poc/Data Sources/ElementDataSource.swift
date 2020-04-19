@@ -13,6 +13,7 @@ let FileClassDraggieElement = "com.k4lab.draggie"
 
 extension NSPasteboard.PasteboardType {
     static let draggieElement = NSPasteboard.PasteboardType(FileClassDraggieElement)
+    static let internalReference = NSPasteboard.PasteboardType("com.k4lab.internal-draggie")
 }
 
 var AcceptedDraggableTypes: [NSPasteboard.PasteboardType] {
@@ -173,6 +174,8 @@ final class ElementDataSource: NSObject, ElementDataSourceInterface {
 
 extension ElementDataSource: NSPasteboardItemDataProvider {
     func pasteboard(_ pasteboard: NSPasteboard?, item: NSPasteboardItem, provideDataForType type: NSPasteboard.PasteboardType) {
+
+        item.setString("hello there!", forType: .internalReference)
 
         print("#NSPasteboardItemDataProvider \(pasteboard), \(item), \(type) ")
     }

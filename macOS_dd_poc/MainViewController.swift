@@ -394,6 +394,15 @@ extension ViewController: NSDraggingDestination  {
 
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
         print("### outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation)")
+
+
+        for item in session.draggingPasteboard.pasteboardItems ?? [] {
+            for type in item.types {
+                if let data = item.data(forType: type) {
+                    print("### type: \(type), data length: \(data.count)")
+                }
+            }
+        }
     }
 
     func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {

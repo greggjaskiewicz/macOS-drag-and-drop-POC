@@ -211,6 +211,8 @@ extension ViewController: NSDraggingDestination  {
         let source = (info.draggingSource) ?? ""
         let pasteboard = info.draggingPasteboard
 
+        var returnValue = false
+
         print("# acceptDrop: is this a copy: \(copy), source: \(source)")
 
         if let sourceOutlineView = (source as? NSOutlineView) {
@@ -249,6 +251,17 @@ extension ViewController: NSDraggingDestination  {
 //                    }
 
                     if let d = item.data(forType: type), d.count > 0 {
+
+                        if type == .draggieElement {
+                            // try to unarchive
+
+                            if let elementItem = (NSKeyedUnarchiver.unarchiveObject(with: d) as? ElementDataSource) {
+                                print("##### element data source: \(elementItem.allValues())")
+                                returnValue = true
+                                continue
+                            }
+                        }
+
                         print("## data \(d), type: \(type)")
 
                         if let string = NSString(data: d, encoding: String.Encoding.utf8.rawValue) {
@@ -259,7 +272,6 @@ extension ViewController: NSDraggingDestination  {
                             print("### \(element)")
                         }
 
-
                     }
 
                     if type == .draggieElement {
@@ -269,7 +281,7 @@ extension ViewController: NSDraggingDestination  {
                 }
             }
 
-            return true
+            return returnValue
 
             // internal
         } else {
@@ -367,14 +379,18 @@ extension ViewController: NSDraggingDestination  {
 
     func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
 
-//        print("# validateDrop destination vc: \(info.draggingDestinationWindow?.contentViewController)")
+        print("# validateDrop destination vc: \(info.draggingDestinationWindow?.contentViewController)")
 
-        guard let _ = item as? ElementDataSource else {
+        guard let elementItem = item as? ElementDataSource else {
             return .generic
         }
 
         if (info.draggingDestinationWindow?.contentViewController)?.isKind(of: ViewController.self) == true {
-            return .copy
+
+            let archive = NSKeyedArchiver.archivedData(withRootObject: elementItem)
+            info.draggingPasteboard.setData(archive, forType: .draggieElement)
+
+            return .every
         }
 
         return .every

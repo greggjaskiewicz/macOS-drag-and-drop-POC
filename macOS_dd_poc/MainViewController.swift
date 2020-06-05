@@ -142,6 +142,19 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, NSCont
         return nil
     }
 
+    func outlineView(_ outlineView: NSOutlineView, writeItems items: [Any], to pasteboard: NSPasteboard) -> Bool {
+        print("### outlineView(_ outlineView: NSOutlineView, writeItems items: [Any], to pasteboard: NSPasteboard)")
+
+        // This is what you need for D&D within the app!!!!!
+        let elements = items.compactMap({ ($0 as? ElementDataSource)?.allValues() }).flatMap({$0})
+        let element = ElementDataSource(values: elements)
+
+        let archive = NSKeyedArchiver.archivedData(withRootObject: element)
+        pasteboard.setData(archive, forType: .draggieElement)
+
+        print("### elements count (\(elements.count))")
+        return elements.count > 0
+    }
 
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
 
@@ -370,7 +383,6 @@ extension ViewController: NSDraggingDestination  {
     func outlineView(_ outlineView: NSOutlineView, namesOfPromisedFilesDroppedAtDestination dropDestination: URL, forDraggedItems items: [Any]) -> [String] {
 
         let elements = items.compactMap({ $0 as? ElementDataSource})
-
         let elementsName = elements.compactMap({ $0.suggestedFilename() })
 
         return elementsName
@@ -387,10 +399,10 @@ extension ViewController: NSDraggingDestination  {
 
         if (info.draggingDestinationWindow?.contentViewController)?.isKind(of: ViewController.self) == true {
 
-            let archive = NSKeyedArchiver.archivedData(withRootObject: elementItem)
-            info.draggingPasteboard.setData(archive, forType: .draggieElement)
+//            let archive = NSKeyedArchiver.archivedData(withRootObject: elementItem)
+//            info.draggingPasteboard.setData(archive, forType: .draggieElement)
 
-            return .every
+            return .`private`
         }
 
         return .every
@@ -399,13 +411,12 @@ extension ViewController: NSDraggingDestination  {
 
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItems draggedItems: [Any]) {
         print("### outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItems draggedItems: [Any]")
-    }
 
-    func outlineView(_ outlineView: NSOutlineView, writeItems items: [Any], to pasteboard: NSPasteboard) -> Bool {
-        print("### outlineView(_ outlineView: NSOutlineView, writeItems items: [Any], to pasteboard: NSPasteboard)")
-        let elements = items.compactMap({$0 as? ElementDataSource})
-        print("### elements count (\(elements.count))")
-        return elements.count > 0
+        let elements = draggedItems.compactMap({ ($0 as? ElementDataSource)?.allValues() }).flatMap({$0})
+        let element = ElementDataSource(values: elements)
+
+        let archive = NSKeyedArchiver.archivedData(withRootObject: element)
+        session.draggingPasteboard.setData(archive, forType: .draggieElement)
     }
 
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {

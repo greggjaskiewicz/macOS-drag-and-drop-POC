@@ -195,7 +195,7 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, NSCont
         if let selection = self.documentElementTreeOutlineView?.selectedRowIndexes {
 
             for selectedIndex in selection {
-                if let item = outline.item(atRow: selectedIndex) as? Int {
+                if (outline.item(atRow: selectedIndex) as? Int) != nil {
                     // do stuff
 
                 }
@@ -351,7 +351,7 @@ extension ViewController: NSDraggingDestination  {
                 //                        continue
                 //                    }
 
-                guard let parser = try? ParseDraggieFile(draggieFilePath: file) else {
+                guard (try? ParseDraggieFile(draggieFilePath: file)) != nil else {
                     continue
                 }
 
@@ -393,7 +393,7 @@ extension ViewController: NSDraggingDestination  {
 
         print("# validateDrop destination vc: \(info.draggingDestinationWindow?.contentViewController)")
 
-        guard let elementItem = item as? ElementDataSource else {
+        guard (item as? ElementDataSource) != nil else {
             return .generic
         }
 

@@ -63,11 +63,7 @@ final class ElementDataSource: NSObject, ElementDataSourceInterface {
     @objc convenience init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType) {
 
         return nil
-        //        self.coordinates = [CLLocationCoordinate2D(latitude: CLLocationDegrees(floatLiteral: 0), longitude: CLLocationDegrees(floatLiteral: 0))]
     }
-
-    //    @objc override func pasteboard(_ sender: NSPasteboard, provideDataForType type: NSPasteboard.PasteboardType) {
-    //    }
 
     func asDraggieObject() -> DraggieData? {
 

@@ -149,7 +149,7 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, NSCont
         let elements = items.compactMap({ ($0 as? ElementDataSource)?.allValues() }).flatMap({$0})
         let element = ElementDataSource(values: elements)
 
-        let archive = NSKeyedArchiver.archivedData(withRootObject: element)
+        let archive = try? NSKeyedArchiver.archivedData(withRootObject: element, requiringSecureCoding: false)
         pasteboard.setData(archive, forType: .draggieElement)
 
         print("### elements count (\(elements.count))")
@@ -268,7 +268,8 @@ extension ViewController: NSDraggingDestination  {
                         if type == .draggieElement {
                             // try to unarchive
 
-                            if let elementItem = (NSKeyedUnarchiver.unarchiveObject(with: d) as? ElementDataSource) {
+                            if let elementItem = try? NSKeyedUnarchiver.unarchivedObject(ofClass: ElementDataSource.self,
+                                                                                         from: d) {
                                 print("##### element data source: \(elementItem.allValues())")
                                 returnValue = true
                                 continue
@@ -415,7 +416,7 @@ extension ViewController: NSDraggingDestination  {
         let elements = draggedItems.compactMap({ ($0 as? ElementDataSource)?.allValues() }).flatMap({$0})
         let element = ElementDataSource(values: elements)
 
-        let archive = NSKeyedArchiver.archivedData(withRootObject: element)
+        let archive = try? NSKeyedArchiver.archivedData(withRootObject: element, requiringSecureCoding: false)
         session.draggingPasteboard.setData(archive, forType: .draggieElement)
     }
 
